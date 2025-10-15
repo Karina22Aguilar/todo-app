@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App - Gestión de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Mi Lista de Tareas</h1>
+        </header>
+
+        <div class="add-task">
+            <input type="text" id="taskInput" placeholder="Escribe una nueva tarea...">
+            <button onclick="addTask()">Agregar Tarea</button>
+        </div>
+
+        <div class="tasks-container">
+            <ul id="tasksList"></ul>
+        </div>
+
+        <div class="stats">
+            <span id="tasksCount">Total: 0 tareas</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
