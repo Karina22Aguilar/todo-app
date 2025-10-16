@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: todo_db
     ports:
-      - "3000:3000"
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -22,7 +22,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: todo_db
-      DB_PORT: 3000
+      DB_PORT: 5432
       PORT: 3000
     ports:
       - "3000:3000"
@@ -33,5 +33,14 @@ services:
       - ./backend:/app
     restart: unless-stopped
 
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
 volumes:
   pgdata:
+
